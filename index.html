@@ -10,13 +10,10 @@
 <body ng-app="learndigest">
     <div ng-controller="playgroundCtrl as vm">
         {{vm.force}}<br>        
-        <input type="text" ng-model="vm.force">
-        <button type="button" ng-click="vm.resetForce()">Reset</button>
-        <div ng-controller="internalCtrl as vm">
-            <input type="text" ng-model="vm.playground.force"><br>
-            {{vm.secret}}
-        </div>
-    </div>
+        <div ng-if="vm.enableForceEdit">
+            <input  type="text" ng-model="vm.force">
+        </div> 
+        <button type="button" ng-click="vm.resetForce()">Reset</button>             
+    </div><!--playgroundCtrl-->
 </body>
-
 </html>

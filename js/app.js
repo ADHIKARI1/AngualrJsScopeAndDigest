@@ -2,6 +2,7 @@ var app = angular.module('learndigest', []);
 app.controller('playgroundCtrl', function($scope){
     var vm =  this;
     //$scope.playground = vm;
+    vm.enableForceEdit = true;
     vm.force = 30;
     vm.resetForce = function(){
         vm.force = 0;

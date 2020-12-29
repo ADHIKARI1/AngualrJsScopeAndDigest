@@ -8,14 +8,13 @@
     <script src="js/app.js"></script>
 </head>
 <body ng-app="learndigest">
-    <div ng-controller="playground">
-        {{force}}<br>
-        {{secret}}<br>
-        <input type="text" ng-model="force">
-        <button type="button" ng-click="resetForce()">Reset</button>
-        <div ng-controller="internal">
-            <input type="text" ng-model="force"><br>
-            {{secret}}
+    <div ng-controller="playgroundCtrl as vm">
+        {{vm.force}}<br>        
+        <input type="text" ng-model="vm.force">
+        <button type="button" ng-click="vm.resetForce()">Reset</button>
+        <div ng-controller="internalCtrl as vm">
+            <input type="text" ng-model="vm.playground.force"><br>
+            {{vm.secret}}
         </div>
     </div>
 </body>

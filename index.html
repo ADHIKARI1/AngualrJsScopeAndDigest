@@ -9,9 +9,10 @@
 </head>
 <body ng-app="learndigest">
     <div ng-controller="playgroundCtrl as vm">
-        {{vm.force}}<br>        
+        {{vm.userProperties.force}}<br>  
+        <div ng-bind="vm.userProperties.force"></div>         
         <div ng-if="vm.enableForceEdit">
-            <input  type="text" ng-model="vm.force">
+            <input  type="text" ng-model="vm.userProperties.force">
         </div> 
         <button type="button" ng-click="vm.resetForce()">Reset</button>             
     </div><!--playgroundCtrl-->

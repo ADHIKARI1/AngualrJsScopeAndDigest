@@ -1,12 +1,23 @@
 var app = angular.module('learndigest', []);
 app.controller('playgroundCtrl', function($scope){
     var vm =  this;
+
+    vm.userProperties = {
+        favoriteColor : 'white',
+        nickName : 'mick',
+        force: 30
+    };
+
+
     //$scope.playground = vm;
     vm.enableForceEdit = true;
-    vm.force = 30;
+    vm.userProperties.force = 30;
     vm.resetForce = function(){
-        vm.force = 0;
+        vm.userProperties.force = 0;
     }//resetForce
+    $scope.$watch('vm.userProperties', function(){
+        console.log('changed ', vm.userProperties);
+    }, true);
 });//playground
 app.controller('internalCtrl', function($scope){
     var vm = this;

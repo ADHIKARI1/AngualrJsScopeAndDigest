@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope & Digest</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="learndigest">
+    <div ng-controller="playground">
+        {{force}}<br>
+        {{secret}}<br>
+        <input type="text" ng-model="force">
+        <button type="button" ng-click="resetForce()">Reset</button>
+        <div ng-controller="internal">
+            <input type="text" ng-model="force"><br>
+            {{secret}}
+        </div>
+    </div>
+</body>
+
+</html>

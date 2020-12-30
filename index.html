@@ -10,10 +10,11 @@
 </head>
 <body ng-app="learndigest">
     <div ng-controller="playgroundCtrl as vm">
-        {{vm.force}}<br>      
-        {{vm.forceInUSD}}<br>              
+        {{vm.force}}<br>        
+        {{vm.dream}}<br> 
         <input  type="text" ng-model="vm.force">        
-        <button type="button" ng-click="vm.resetForce()">Reset</button>            
+        <button type="button" ng-click="vm.resetForce()">Reset</button>     
+        <button type="button" id="theBtn">Bad Button</button>       
     </div><!--playgroundCtrl-->
 </body>
 </html>

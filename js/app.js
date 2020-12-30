@@ -18,10 +18,9 @@ app.controller('playgroundCtrl', function($scope){
     }, function(){});//watch
 
     //btn click not work untill digest loop apply
-    $('#theBtn').on('click', function(){
-        
+    $('#theBtn').on('click', function(){        
         $scope.$apply(function(){
-            vm.anytime.deal;
+            //vm.anytime.deal;
             vm.dream = 'nightmare';
         });
     });

@@ -9,12 +9,14 @@
 </head>
 <body ng-app="learndigest">
     <div ng-controller="playgroundCtrl as vm">
-        {{vm.userProperties.force}}<br>  
-        <div ng-bind="vm.userProperties.force"></div>         
-        <div ng-if="vm.enableForceEdit">
-            <input  type="text" ng-model="vm.userProperties.force">
-        </div> 
-        <button type="button" ng-click="vm.resetForce()">Reset</button>             
+        {{vm.force}}<br>              
+        <input  type="text" ng-model="vm.force">        
+        <button type="button" ng-click="vm.resetForce()">Reset</button>  
+        <div ng-if="vm.force % 2 == 0">
+            <div ng-controller="internalCtrl as vm">
+                the internal controller
+            </div>
+        </div>           
     </div><!--playgroundCtrl-->
 </body>
 </html>

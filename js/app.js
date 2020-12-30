@@ -4,22 +4,19 @@ app.controller('playgroundCtrl', function($scope){
     //$scope.playground = vm;
     vm.enableForceEdit = true;
     vm.force = 30;
+    vm.forceInUSD = vm.force * 10;
     vm.resetForce = function(){
         vm.force = 0;
     }//resetForce  
-});//playground
-app.controller('internalCtrl', function($scope){
-    var vm = this;
-    vm.playground = $scope.$parent.vm;
-   // vm.secret = "shhhhh";
-   var watchesRemain = 3;
-    var watchDestroyer = $scope.$watch('vm.playground.force', function(){
-        console.log('the force ', vm.playground.force);
-        watchesRemain--;
-        if(watchesRemain == 0)
-        {
-            watchDestroyer();
-        }
-    });
 
-});//internal
+    var times = 0;
+    $scope.$watch(function(){
+        console.log('watcher was called ',times);
+        times++;
+        return 0;
+    }, function(){});//watch
+
+    $scope.$watch('vm.force',function(){
+        vm.forceInUSD = vm.force * 10;
+    }, function(){});//watch
+});//playground
